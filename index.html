@@ -3,131 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Northstar Studio</title>
+    <title>Sky Hop - Arcade Flight</title>
     <meta
       name="description"
-      content="A polished landing page for testing design, layout, and interactions."
+      content="Fly through the gates in Sky Hop, a tiny arcade game about impeccable timing."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-shell">
+    <main class="arcade-shell">
       <header class="topbar">
-        <div class="brand" aria-label="Northstar Studio home">NORTHSTAR</div>
-        <nav class="nav" aria-label="Main navigation">
-          <a href="#features">Features</a>
-          <a href="#showcase">Showcase</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-          Dark mode
-        </button>
+        <a class="wordmark" href="#" aria-label="Sky Hop home"><span class="brand-mark">S</span> SKY HOP<span class="wordmark-period">.</span></a>
+        <p class="edition">ARCADE FLIGHT <span>NO. 001</span></p>
+        <div class="toolbar">
+          <button id="soundToggle" class="icon-button" type="button" aria-label="Mute sound" title="Mute sound">
+            <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+          </button>
+          <button id="pauseButton" class="icon-button" type="button" aria-label="Pause game" title="Pause game" disabled>
+            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+          </button>
+        </div>
       </header>
 
-      <main class="container">
-        <section class="hero card hero-panel">
-          <div class="hero-copy">
-            <p class="eyebrow">Built to convert</p>
-            <h1>Launch faster with a site that feels premium.</h1>
-            <p class="subtitle">
-              A clean, modern experience for testing launches, user flows, and responsive design.
-            </p>
-            <div class="cta-row">
-              <button class="primary-btn">Get started</button>
-              <button class="secondary-btn">View demo</button>
-            </div>
-          </div>
-
-          <div class="hero-aside">
-            <div class="status-card">
-              <span class="status-label">Status</span>
-              <strong id="statusPill">Ready</strong>
-            </div>
-            <div class="mini-graph" aria-label="Growth chart">
-              <span class="bar b1"></span>
-              <span class="bar b2"></span>
-              <span class="bar b3"></span>
-              <span class="bar b4"></span>
-              <span class="bar b5"></span>
-            </div>
-          </div>
-        </section>
-
-        <section class="stats-row" aria-label="Key metrics">
-          <div class="stat-item card">
-            <strong>4.8/5</strong>
-            <span>Average rating</span>
-          </div>
-          <div class="stat-item card">
-            <strong>2.4x</strong>
-            <span>Faster launches</span>
-          </div>
-          <div class="stat-item card">
-            <strong>24/7</strong>
-            <span>Always available</span>
-          </div>
-        </section>
-
-        <section id="features" class="features-section">
-          <div class="section-heading">
-            <p class="eyebrow">Why teams choose us</p>
-            <h2>Everything your launch needs.</h2>
-          </div>
-
-          <div class="feature-grid">
-            <article class="card feature-card">
-              <div class="icon">⚡</div>
-              <h3>Fast setup</h3>
-              <p>Deploy polished pages quickly without wasting time on boilerplate.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="icon">🎯</div>
-              <h3>Focused UX</h3>
-              <p>Simple, clear design patterns that keep users engaged.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="icon">📈</div>
-              <h3>Better results</h3>
-              <p>Thoughtful messaging and motion create confidence and action.</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="showcase" class="showcase-grid">
-          <article class="card showcase-card">
-            <h2>Demo form</h2>
-            <form id="demoForm">
-              <label for="nameInput">Your name</label>
-              <input id="nameInput" name="name" type="text" placeholder="Enter a name" />
-              <button type="submit">Submit</button>
-            </form>
-            <p id="welcomeMessage" class="message" aria-live="polite">Waiting for input…</p>
-          </article>
-
-          <article class="card showcase-card">
-            <h2>Counter</h2>
-            <div class="counter-row">
-              <button id="decrementBtn" aria-label="Decrease count">−</button>
-              <span id="countValue">0</span>
-              <button id="incrementBtn" aria-label="Increase count">+</button>
-            </div>
-            <p class="message" id="counterMessage">The counter is at zero.</p>
-          </article>
-        </section>
-
-        <section class="cta-panel card" id="contact">
+      <section class="game-section" aria-label="Sky Hop game">
+        <div class="game-heading">
           <div>
-            <p class="eyebrow">Ready to move</p>
-            <h2>Set up your next project in minutes.</h2>
+            <p class="eyebrow"><span class="live-dot"></span> ONE MORE FLIGHT</p>
+            <h1>Find your <span>rhythm.</span></h1>
           </div>
-          <button class="primary-btn">Talk to us</button>
-        </section>
-      </main>
+          <div class="scoreboard" aria-label="Game scores">
+            <div class="score-block"><span class="score-label">SCORE</span><strong id="score">00</strong></div>
+            <div class="score-divider"></div>
+            <div class="score-block best-score"><span class="score-label">BEST</span><strong id="bestScore">00</strong></div>
+          </div>
+        </div>
 
-      <footer class="footer">
-        <p>© 2026 Northstar Studio</p>
-      </footer>
-    </div>
+        <div class="game-frame">
+          <canvas id="gameCanvas" width="800" height="520" aria-label="Sky Hop game. Press space or tap to fly through the gates."></canvas>
+          <div id="gameOverlay" class="game-overlay" aria-live="polite">
+            <div class="overlay-content">
+              <p id="overlayKicker" class="overlay-kicker">THE SKY IS YOURS</p>
+              <h2 id="overlayTitle">Ready,<br />little bird?</h2>
+              <p id="overlayMessage" class="overlay-message">Thread the gates. Keep your wings.</p>
+              <button id="startButton" class="start-button" type="button"><span>Start flying</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+            </div>
+            <span class="overlay-index">SH / 001</span>
+          </div>
+          <div class="game-hint" aria-hidden="true"><span class="keycap">SPACE</span><span>or tap to flap</span></div>
+        </div>
+
+        <footer class="game-footer">
+          <p>KEEP IT LIGHT <span>·</span> KEEP IT MOVING</p>
+          <button id="restartButton" class="text-button" type="button" aria-label="Restart game"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.5 9a7 7 0 0 1 11.6-2.1L20 12M4 12l2.9 5.1A7 7 0 0 0 18.5 15"/></svg><span>Restart</span></button>
+        </footer>
+      </section>
+
+      <div id="announcement" class="visually-hidden" aria-live="polite"></div>
+    </main>
 
     <script src="app.js"></script>
   </body>
